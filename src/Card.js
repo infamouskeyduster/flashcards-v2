@@ -8,7 +8,3 @@ class Card {
 }
 
 module.exports = Card;
-//Each card has an id,
-// a question,
-// possible answers,
-// and a correct answer
