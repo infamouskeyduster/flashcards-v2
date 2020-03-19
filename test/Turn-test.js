@@ -6,7 +6,7 @@ const Card = require('../src/Card.js');
 describe('Turn', function(){
 
   let card, turn;
-  
+
   it('should be a function', function () {
     const turn = new Turn();
     expect(Turn).to.be.a('function');
@@ -27,5 +27,11 @@ describe('Turn', function(){
     expect(turn.card).to.equal(card);
   });
 
+  it('should have a method that returns the player\'s guess', function () {
+    expect(turn.returnGuess()).to.equal(turn.guess);
+  });
 
+  it('should have a method that returns the current card in play', function () {
+    expect(turn.returnCard()).to.equal(card);
+  });
 });
