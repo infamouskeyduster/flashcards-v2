@@ -83,7 +83,7 @@ describe('Round', function () {
     expect(round.incorrectGuesses.length).to.equal(2);
     expect(round.turns).to.equal(4);
     expect(round.calculatePercentCorrect()).to.equal(50);
-    // expect(round.endRound()).to.equal(`** Round over! ** You answered 50% of the questions correctly!`);
+    expect(round.endRound()).to.equal(`** Round over! ** You answered 50% of the questions correctly!`);
   });
 
 });
