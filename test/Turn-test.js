@@ -34,4 +34,11 @@ describe('Turn', function(){
   it('should have a method that returns the current card in play', function () {
     expect(turn.returnCard()).to.equal(card);
   });
+
+  it('should have a method that evaluates a player\'s guess and returns T/F', function () {
+    turn = new Turn('object', card);
+    expect(turn.evaluateGuess()).to.equal(true);
+    turn = new Turn('array', card);
+    expect(turn.evaluateGuess()).to.equal(false);
+  });
 });
