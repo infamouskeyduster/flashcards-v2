@@ -19,6 +19,14 @@ class Turn {
       return false;
     }
   }
+
+  giveFeedback() {
+    if (this.evaluateGuess() === true) {
+      return '🤩 CORREECT! Boo-Yah! Yahtzee! Eureka!';
+    } else if (this.evaluateGuess() === false) {
+      return '😞 INCORRECT! No Dice! Try Again!';
+    }
+  }
 }
 
 module.exports = Turn;

@@ -41,4 +41,13 @@ describe('Turn', function(){
     turn = new Turn('array', card);
     expect(turn.evaluateGuess()).to.equal(false);
   });
+
+  it('should have a method that provides a player with feedback based on their guess', function () {
+    turn = new Turn('array', card);
+    expect(turn.evaluateGuess()).to.equal(false);
+    expect(turn.giveFeedback()).to.equal('😞 INCORRECT! No Dice! Try Again!');
+    turn = new Turn('object', card);
+    expect(turn.evaluateGuess()).to.equal(true);
+    expect(turn.giveFeedback()).to.equal('🤩 CORREECT! Boo-Yah! Yahtzee! Eureka!');
+  });
 });
