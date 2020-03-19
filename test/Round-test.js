@@ -23,9 +23,12 @@ describe('Round', function () {
     round = new Round(deck);
   });
 
-  it('A round should be inmstantianted with the current deck of cards', function () {
+  it('A round should be instantianted with the current deck of cards', function () {
     expect(round.deck).to.deep.equal(cards);
   });
 
+  it('The current Card should be the first Card in the Deck (the array of Cards) at the start of the Round', function () {
+    expect(round.deck[round.turns]).to.equal(card1);
+  });
 
 });
