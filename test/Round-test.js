@@ -31,4 +31,23 @@ describe('Round', function () {
     expect(round.deck[round.turns]).to.equal(card1);
   });
 
+  it('the turns should be updated every time that the takeTurn method is called', function () {
+    expect(round.turns).to.equal(0);
+    round.takeTurn('pug');
+    expect(round.turns).to.equal(1);
+    round.takeTurn('capybara');
+    expect(round.turns).to.equal(2);
+  });
+
+  it('it should keep track of incorrect guesses & iterate to the next card in deck', function () {
+    expect(round.incorrectGuesses.length).to.equal(0);
+    round.takeTurn('pug');
+    expect(round.incorrectGuesses.length).to.equal(1);
+    round.takeTurn('spleen');
+    expect(round.incorrectGuesses.length).to.equal(2);
+    round.takeTurn('Fitzgerald');
+    expect(round.incorrectGuesses.length).to.equal(2);
+    expect(round.turns).to.equal(3);
+  });
+
 });
