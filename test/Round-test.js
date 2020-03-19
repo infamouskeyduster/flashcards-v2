@@ -85,5 +85,4 @@ describe('Round', function () {
     expect(round.calculatePercentCorrect()).to.equal(50);
     expect(round.endRound()).to.equal(`** Round over! ** You answered 50% of the questions correctly!`);
   });
-
 });
