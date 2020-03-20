@@ -29,8 +29,8 @@ class Round {
 
   endRound() {
     this.endTime = Date.now();
-    let timeBetween = this.endTime - this.startTime;
-    let timeElapsed = Math.round(timeBetween / 1000);
+    let timeBetweenEndandStartMili = this.endTime - this.startTime;
+    let timeElapsed = Math.round(timeBetweenEndandStartMili / 1000);
     console.log(`** Round over! ** You answered ${this.calculatePercentCorrect()}% of the questions correctly! This round took you ${timeElapsed} seconds to complete!`);
   }
 }
